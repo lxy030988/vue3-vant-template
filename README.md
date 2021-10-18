@@ -1,5 +1,5 @@
-# vue3-element-template
- vite2 + vue3 + element-plus 后台管理系统模板
+# vue3-vant-template
+ vite2 + vue3 + vant 移动端模板
 
 ## 基础
 
@@ -12,10 +12,6 @@ import { defineComponent, inject, provide, onMounted, PropType, reactive, Ref, r
 
 setup(props,ctx) {}
 ```
-
-### element-plus
-
-- https://element-plus.gitee.io/zh-CN/
 
 
 ### vue3.2

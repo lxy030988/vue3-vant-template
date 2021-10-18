@@ -2,24 +2,12 @@
   <div class="header">
     <div class="logo">
       <!-- <img src="@/assets/images/logo.png" /> -->
-      vue3-element-template
+      vue3-vant-template
     </div>
     <div class="header-right">
       <div class="header-user-con">
-        <!-- 用户名下拉菜单 -->
-        <el-dropdown @command="handleCommand">
-          <span class="el-dropdown-link">
-            <!-- <img src="@/assets/images/avator.png" /> -->
-            {{ username }}<i class="el-icon-arrow-down el-icon--right"></i>
-          </span>
-          <template #dropdown>
-            <el-dropdown-menu>
-              <el-dropdown-item :command="DropdownEnum.USER_INFO">个人信息</el-dropdown-item>
-              <el-dropdown-item :command="DropdownEnum.UPDATE_PASSWORD">修改密码</el-dropdown-item>
-              <el-dropdown-item :command="DropdownEnum.LOGOUT">退出登录</el-dropdown-item>
-            </el-dropdown-menu>
-          </template>
-        </el-dropdown>
+        <!-- 用户名下拉菜单 -->{{ username }}
+
         <!-- <update-pwd v-model:visible="visible" /> -->
         <!-- <user-info v-model:visible="userVisible" /> -->
       </div>

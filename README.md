@@ -162,7 +162,7 @@ src/assets/icons/dynamic-avatar-2.svg
       <vue-echarts :options="options"></vue-echarts>
     </div>
     <div>
-      <el-button type="primary" @click="changeSeriesData">改变echarts数据</el-button>
+      <van-button type="primary" @click="changeSeriesData">改变echarts数据</van-button>
     </div>
   </div>
 </template>
@@ -435,7 +435,7 @@ module.exports = {
 
 ```vue
 <div class="plan3">plan</div>
-<el-button type="primary" @click="test">测试</el-button>
+<van-button type="primary" @click="test">测试</van-button>
 
 <script lang="ts">
 export default defineComponent({

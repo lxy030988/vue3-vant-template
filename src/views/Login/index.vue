@@ -24,7 +24,7 @@
             </el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="onSubmit" class="login-btn"> 登录 </el-button>
+            <van-button type="primary" @click="onSubmit" class="login-btn"> 登录 </van-button>
           </el-form-item>
         </el-form>
       </div>

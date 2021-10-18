@@ -1,27 +1,19 @@
 <template>
   <div>
-    <div>element 图标</div>
-    <el-icon color="#409EFC" class="no-inherit">
-      <RefreshRight />
-    </el-icon>
+    <van-button type="primary">主要按钮</van-button>
+    <div class="test">element 图标</div>
   </div>
   <img alt="Vue logo" src="@/assets/logo.png" />
   <img alt="Vue logo" src="../../assets/logo.png" />
   <img src="@/assets/icons/menu/home.svg" alt="" style="width: 20px" />
   <div>
-    <el-button type="primary" @click="testVuex"> 测试Vuex </el-button>
+    <van-button type="primary" @click="testVuex"> 测试Vuex </van-button>
   </div>
   <Messagea />
   <div class="jc-svg-icon assd s s s s">
     <div>图标测试</div>
     <svg-icon name="home" />
     <svg-icon name="setting" />
-    <div class="echarts">
-      <vue-echarts :options="options" />
-    </div>
-    <div>
-      <el-button type="primary" @click="test"> 测试 </el-button>
-    </div>
   </div>
 </template>
 
@@ -33,14 +25,10 @@ import { computed, defineComponent, ref } from 'vue'
 // import { useStore } from 'vuex'
 import { useMyStore } from '@/hooks'
 
-import VueEcharts, { OptionType } from '@/components/echarts'
-import { RefreshRight } from '@element-plus/icons'
 export default defineComponent({
   name: 'Home',
   components: {
-    Messagea,
-    VueEcharts,
-    RefreshRight
+    Messagea
   },
   setup() {
     // console.log(import.meta.env.VITE_BASE_URL)
@@ -49,40 +37,7 @@ export default defineComponent({
     const { state, getters, commit, dispatch } = useMyStore()
     // console.log('vuex state', state.user.loading)
     console.log('getters', getters['user/isLogin'])
-    const installData = ref([120, 200, 150, 80, 70, 110, 130])
-    const options = computed(
-      (): OptionType => ({
-        // tooltip: {},
-        color: ['red', '#006cff'],
-        // legend: {},
-        title: {
-          text: '柱状图',
-          borderWidth: 1,
-          borderType: 'solid'
-        },
-        xAxis: {
-          type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-        },
-        yAxis: {
-          type: 'value'
-        },
-        series: [
-          {
-            data: installData.value,
-            type: 'bar',
-            showBackground: true,
-            backgroundStyle: {
-              color: 'rgba(180, 180, 180, 0.2)'
-            }
-          }
-        ]
-      })
-    )
-    function test() {
-      console.log('test')
-      installData.value = [80, 70, 110, 130, 120, 200, 150]
-    }
+
     function testVuex() {
       console.log('testVuex')
       // commit('user/GET_DATA', false)
@@ -92,11 +47,14 @@ export default defineComponent({
       //   console.log('vuex state', state.user.loading)
       // }, 3000)
     }
-    return { options, test, testVuex }
+    return { testVuex }
   }
 })
 </script>
 <style lang="scss" scoped>
+.test {
+  width: 100px;
+}
 .jc-svg-icon {
   color: red;
 }

@@ -2,9 +2,9 @@
   <div class="wrapper">
     <v-head />
     <div class="wrapper-con">
-      <div class="left">
+      <!-- <div class="left">
         <v-sidebar />
-      </div>
+      </div> -->
       <div class="right">
         <div class="content-box">
           <router-view v-slot="{ Component }">

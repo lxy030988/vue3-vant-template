@@ -4,10 +4,10 @@
   <div class="plan3">plan</div>
   <div>color--{{ color }}</div>
   <div>size--{{ size }}</div>
-  <el-button type="primary" @click="test">测试</el-button>
+  <van-button type="primary" @click="test">测试</van-button>
   <!-- <img alt="Vue logo" src="@/assets/logo.png" /> -->
   <test-setup ref="ref1" msg="xxx" :more="{ name: 'l', age: 11 }" @change="testSetupChange" />
-  <el-button type="primary" @click="testSetupBtn">test-setup-btn</el-button>
+  <van-button type="primary" @click="testSetupBtn">test-setup-btn</van-button>
 
   <my-count :init-value="1" />
 </template>

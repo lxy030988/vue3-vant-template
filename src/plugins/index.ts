@@ -1,3 +1,2 @@
-export { setupElementPlus } from './element-plus'
+export { setupVant } from './vant'
 export { setupSvgIcon } from './svgIcon'
-export { setupVueEcharts } from './echarts'

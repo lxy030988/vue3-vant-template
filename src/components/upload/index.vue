@@ -15,7 +15,7 @@
     <a-progress :percent="progressPercent" />
   </div>
   <div>
-    <el-button type="primary" @click="uploadBtn">上传</el-button>
+    <van-button type="primary" @click="uploadBtn">上传</van-button>
   </div>
   <div>
     <!-- chunk.progress 

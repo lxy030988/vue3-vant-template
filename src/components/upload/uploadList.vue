@@ -8,10 +8,10 @@
       :before-upload="beforeUpload"
       @change="handleChange"
     >
-      <el-button type="primary" :disabled="loading">
+      <van-button type="primary" :disabled="loading">
         <upload-outlined />
         上传文件
-      </el-button>
+      </van-button>
     </a-upload>
   </div>
 </template>

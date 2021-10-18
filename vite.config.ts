@@ -9,12 +9,8 @@ const CWD: string = process.cwd()
 const pkg = require('./package.json')
 import viteSvgIcons from 'vite-plugin-svg-icons'
 
-// import vm from './plugins/test-vite-plugin'
-// import i18n from './plugins/vite-plugin-i18n'
-
 const alias: Record<string, string> = {
   '@': path.resolve(__dirname, 'src')
-  // img: path.resolve(__dirname, 'src/assets')
 }
 
 module.exports = ({ mode }: any) => {
@@ -49,7 +45,7 @@ module.exports = ({ mode }: any) => {
       }
     },
     optimizeDeps: {
-      include: ['element-plus/lib/locale/lang/zh-cn'],
+      include: [],
       exclude: []
     },
     define: {
@@ -62,7 +58,7 @@ module.exports = ({ mode }: any) => {
         iconDirs: [path.resolve(CWD, 'src/assets/icons')],
         symbolId: 'icon-[dir]-[name]'
       })
-    ], //, vm(), i18n
+    ],
     build: {
       target: 'es2015',
       // polyfillDynamicImport: true,

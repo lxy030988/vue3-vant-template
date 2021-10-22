@@ -4,6 +4,10 @@
     <div class="test">element 图标</div>
   </div>
   <img alt="Vue logo" src="@/assets/logo.png" />
+  <img alt="Vue logo" src="@/assets/logo.png" />
+  <img alt="Vue logo" src="@/assets/logo.png" />
+  <img alt="Vue logo" src="@/assets/logo.png" />
+  <img alt="Vue logo" src="@/assets/logo.png" />
   <img alt="Vue logo" src="../../assets/logo.png" />
   <img src="@/assets/icons/menu/home.svg" alt="" style="width: 20px" />
   <div>

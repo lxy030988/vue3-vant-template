@@ -1,41 +1,46 @@
 <template>
   <div class="wrapper">
-    <v-head />
     <div class="wrapper-con">
-      <!-- <div class="left">
-        <v-sidebar />
-      </div> -->
-      <div class="right">
-        <div class="content-box">
-          <router-view v-slot="{ Component }">
-            <transition>
-              <div class="content">
-                <keep-alive>
-                  <component :is="Component" />
-                </keep-alive>
-              </div>
-            </transition>
-          </router-view>
-        </div>
-      </div>
+      <router-view v-slot="{ Component }">
+        <transition>
+          <div class="content">
+            <keep-alive>
+              <component :is="Component" />
+            </keep-alive>
+          </div>
+        </transition>
+      </router-view>
     </div>
+    <van-tabbar v-model="active" @change="onChange" active-color="#3A4259" inactive-color="#BBBBBB">
+      <van-tabbar-item icon="wap-home-o">首页</van-tabbar-item>
+      <van-tabbar-item icon="user-o">我的</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-
-import VSidebar from './Sidebar/index.vue'
-import VHead from './Header/Header.vue'
+import { defineComponent, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'DefaultLayout',
-  components: {
-    VSidebar,
-    VHead
-  },
   setup() {
-    return {}
+    const routePaths = ['/home', '/my']
+    const active = ref(0)
+
+    const router = useRouter()
+    const onChange = (index: number) => {
+      router.push({ path: routePaths[index] })
+    }
+
+    const route = useRoute()
+    const index = routePaths.findIndex(path => route.path == path)
+    active.value = index
+
+    return {
+      active,
+      onChange
+    }
   }
 })
 </script>
@@ -49,34 +54,8 @@ export default defineComponent({
   .wrapper-con {
     flex: 1;
     display: flex;
-    height: 0;
-  }
-}
-.left {
-  width: $jc-menu-width;
-  background: $jc-slider-bgColor;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.right {
-  width: 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  box-sizing: border-box;
-  .content-box {
-    flex: 1;
-    background: $jc-bg-color;
-    padding: $jc-default-dis;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+    // height: 0;
     overflow: auto;
-    .content {
-      box-sizing: border-box;
-    }
   }
 }
 </style>

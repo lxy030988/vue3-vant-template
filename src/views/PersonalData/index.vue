@@ -1,20 +1,16 @@
 <template>
-  <div class="wrapper">
-    <router-view />
-  </div>
+  <div class="personal-data">PersonalData</div>
 </template>
+
 <script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'FullLayout',
+  name: 'PersonalData',
   setup() {
     return {}
   }
 })
 </script>
-<style lang="scss" scoped>
-.wrapper {
-  overflow: auto;
-}
-</style>
+
+<style lang="scss" scoped></style>

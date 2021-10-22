@@ -20,28 +20,28 @@ const routes: Array<RouteRecordRaw> = [
         path: 'home',
         component: () => import(/* webpackChunkName: "home" */ '@/views/Home/index.vue'),
         meta: {
-          title: '系统首页'
+          title: '首页'
         }
       },
       {
-        path: 'setting/plan',
-        name: 'SettingPlan',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "plan" */ '../views/Plan/index.vue'),
+        name: 'My',
+        path: 'my',
+        component: () => import(/* webpackChunkName: "my" */ '@/views/PersonalData/index.vue'),
         meta: {
-          title: '计划页面'
-        }
-      },
-      {
-        path: 'setting/upload',
-        name: 'SettingUpload',
-        component: () => import(/* webpackChunkName: "upload" */ '../views/Upload/index.vue'),
-        meta: {
-          title: '文件上传'
+          title: '我的'
         }
       }
+      // {
+      //   path: 'setting/plan',
+      //   name: 'SettingPlan',
+      //   // route level code-splitting
+      //   // this generates a separate chunk (about.[hash].js) for this route
+      //   // which is lazy-loaded when the route is visited.
+      //   component: () => import(/* webpackChunkName: "plan" */ '../views/Plan/index.vue'),
+      //   meta: {
+      //     title: '计划页面'
+      //   }
+      // }
     ]
   },
   {
@@ -68,7 +68,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log('beforeEach', to)
+  // console.log('beforeEach', to)
   next()
   document.title = to.meta.title as string
   // if (to.meta.ignore || getToken()) {

@@ -8,6 +8,7 @@
   <img src="@/assets/icons/menu/home.svg" alt="" style="width: 20px" />
   <div>
     <van-button type="primary" @click="testVuex"> 测试Vuex </van-button>
+    <van-button type="primary" @click="clickMenu"> 测试路由 </van-button>
   </div>
   <Messagea />
   <div class="jc-svg-icon assd s s s s">
@@ -24,6 +25,7 @@ import { computed, defineComponent, ref } from 'vue'
 // import { GlobleState } from '@/store'
 // import { useStore } from 'vuex'
 import { useMyStore } from '@/hooks'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'Home',
@@ -47,7 +49,11 @@ export default defineComponent({
       //   console.log('vuex state', state.user.loading)
       // }, 3000)
     }
-    return { testVuex }
+    const router = useRouter()
+    function clickMenu() {
+      router.push({ path: '/setting/plan' })
+    }
+    return { testVuex, clickMenu }
   }
 })
 </script>
